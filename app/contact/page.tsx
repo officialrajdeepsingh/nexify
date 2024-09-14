@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Contact us',
@@ -29,7 +30,6 @@ export const metadata: Metadata = {
       height: 719
     }]
   }
-
 }
 
 export default function page() {
@@ -42,62 +42,8 @@ export default function page() {
           Lorem ipsum dolor sit amet consectetur adipiscing elit ut
           aliquam,purus sit amet luctus magna fringilla urna
         </p>
-        <form
-          name="wf-form-name"
-          method="get"
-          className="mx-auto mb-4 text-left sm:px-4 md:px-20"
-        >
-          <div className="mb-4 grid w-full grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="first-name" className="mb-1 font-medium">
-                First Name
-              </label>
-              <input
-                id="first-name"
-                type="text"
-                className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 text-sm text-black"
-                placeholder="Enter first name"
-                required={true}
-              />
-            </div>
-            <div>
-              <label htmlFor="last-name" className="mb-1 font-medium">
-                Last Name
-              </label>
-              <input
-                id="last-name"
-                type="text"
-                className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 text-sm text-black"
-                placeholder="Enter last name"
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="mb-1 font-medium">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              required={true}
-              className="mb-4 block h-9 w-full rounded-md border border-solid border-black px-3 py-6 text-sm text-black"
-            />
-          </div>
-          <div className="mb-5 md:mb-6 lg:mb-8">
-            <label htmlFor="message" className="mb-1 font-medium">
-              Message
-            </label>
-            <textarea
-              id="message"
-              placeholder="Enter the message"
-              maxLength={5000}
-              name="message"
-              className="mb-2.5 block h-auto min-h-44 w-full rounded-md border border-solid border-black px-3 py-2 text-sm text-black"
-            ></textarea>
-          </div>
-          <button type="submit" className="inline-block w-full rounded-md cursor-pointer bg-black px-6 py-3 text-center font-semibold text-white" > Submit Now </button>
-        </form>
+        <div data-mf-id="xkI6W32" data-mf-title="Untitled Form" className='w-full h-[750px]' ></div>
+        <Script src="https://minform.io/embed.js"></Script>
       </div>
     </section>
   );
