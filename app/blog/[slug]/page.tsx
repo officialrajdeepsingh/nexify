@@ -1,4 +1,4 @@
-import { Post } from '@/app/type';
+import { Post, TypeComments } from '@/app/type';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -31,17 +31,23 @@ export default async function page({ params }: { params: { slug: string } }) {
   const data = await fetch(`https://dummyjson.com/posts/${params.slug}`, { cache: 'force-cache' })
   const post: Post = await data.json()
   const commentsData = await fetch('https://dummyjson.com/comments?limit=5', { cache: 'force-cache' })
-  const { comments } = await commentsData.json()
+  const AllComments: TypeComments = await commentsData.json()
+
+  const { comments } = AllComments
+
+  const tag = post?.tags[0] && "history"
 
   return (
     <>
       <div className="mx-auto w-full max-w-7xl px-5 py-5 md:px-10 md:py-8">
+
         <Link className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-[#050708] text-white hover:underline hover:underline-offset-4" href="/blog" >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
           Back
         </Link>
+
         <div className="mb-6 bg-gray-50 p-5 mt-5">
-          <Link href={`tag/${post.tags[0]}`} className="capitalize mb-2 font-bold px-2 py-3 inline-block"> {post.tags[0]} </Link>
+          <Link href={`tag/${tag}`} className="capitalize mb-2 font-bold px-2 py-3 inline-block"> {tag} </Link>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl lg:mb-10"> {post.title} </h2>
           <p className="mb-8 text-sm text-gray-500 sm:text-base lg:mb-24"> {post.body} </p>
         </div>
@@ -75,7 +81,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             </button>
           </form>
           {
-            comments.map(comment => <article className="p-6 text-base bg-white rounded-lg dark:bg-gray-900">
+            comments.map(comment => <article key={comment.id} className="p-6 text-base bg-white rounded-lg dark:bg-gray-900">
               <footer className="flex justify-between items-center mb-2">
                 <div className="flex items-center">
                   <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
