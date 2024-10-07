@@ -1,3 +1,4 @@
+# Nexify
 Nexify is specifically built to teach you about Next.js.
 
 ### Articles:
