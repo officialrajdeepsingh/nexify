@@ -6,6 +6,7 @@ Nexify is specifically built to teach you about Next.js.
 * <https://medium.com/frontendweb/how-to-use-the-useselectedlayoutsegments-hook-in-next-js-f505da7844e1>
 * <https://medium.com/frontendweb/guide-to-using-the-useselectedlayoutsegment-hook-in-next-js-5210efd597be>
 * <https://medium.com/frontendweb/next-js-seo-how-to-add-open-graph-and-twitter-images-easily-35510844183f>
+* <https://medium.com/frontendweb/how-to-install-and-use-the-vercel-toolbar-in-your-next-js-development-environment-6cb0cace18fd>
 
 ## Getting Started
 
