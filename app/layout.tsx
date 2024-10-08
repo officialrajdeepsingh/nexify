@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Breadcrumb } from "@/components/Breadcrumb"
-
+import { VercelToolbar } from '@vercel/toolbar/next';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,12 +14,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const shouldInjectToolbar = process.env.NODE_ENV === 'development';
   return (
     <html lang="en">
       <body>
         <Header />
         <Breadcrumb />
         {children}
+        {shouldInjectToolbar && <VercelToolbar />}
       </body>
     </html>
   );
