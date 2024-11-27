@@ -1,5 +1,6 @@
 # Nexify
-Nexify is specifically built to teach you about Next.js.
+
+Nexify is a project designed to teach you about Next.js.
 
 ### Articles:
 
@@ -10,20 +11,25 @@ Nexify is specifically built to teach you about Next.js.
 
 ## Getting Started
 
-First, clone the repository from github using Git.
+First, clone the repository from GitHub using Git.
 
 ```bash
 git clone https://github.com/officialrajdeepsingh/Nexify.git
 ```
-Install the project dependencies using NPM, BUN, Yarn and PNPM.
+
+Next, install the project dependencies using one of the following package managers: NPM, BUN, Yarn, or PNPM.
 
 ```bash
+# Got to Nexify folder
+cd Nexify
+
+# install node package
 pnpm install
 # or 
 npm install
 ```
 
-Lastly, run your local development:
+Finally, run your local development server and open [http://localhost:3000](http://localhost:3000) in your browser to see the results.
 
 ```bash
 npm run dev
@@ -34,5 +40,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
