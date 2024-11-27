@@ -1,4 +1,3 @@
-import React from 'react'
 import { getFlags } from '@/app/getFlags';
 export async function Banner() {
   const { banner_discount } = await getFlags();
