@@ -14,14 +14,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: post.title,
       description: post.body,
-      images: ["https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg"], // images : [...post.images] Dummy JSON API doesn't provide a thumbnail image, so we use Pixabay image for this example.
+      images: ["https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg"]
     },
 
     twitter: {
       creator: "Official_R_deep",
       title: post.title,
       description: post.body,
-      images: ["https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg"] // images : [...post.images] Dummy JSON API doesn't provide a thumbnail image, so we use Pixabay image for this example.
+      images: ["https://cdn.pixabay.com/photo/2017/02/08/17/24/fantasy-2049567_1280.jpg"]
     }
   }
 }
@@ -46,10 +46,10 @@ export default async function page({ params }: { params: { slug: string } }) {
           Back
         </Link>
 
-        <div className="mb-6 bg-gray-50 p-5 mt-5">
+        <div className="mb-6 bg-blue-400 p-5 mt-5">
           <Link href={`tag/${tag}`} className="capitalize mb-2 font-bold px-2 py-3 inline-block"> {tag} </Link>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl lg:mb-10"> {post.title} </h2>
-          <p className="mb-8 text-sm text-gray-500 sm:text-base lg:mb-24"> {post.body} </p>
+          <p className="mb-8 text-sm sm:text-base lg:mb-24"> {post.body} </p>
         </div>
       </div>
 
